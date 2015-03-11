@@ -1,0 +1,69 @@
+Create and populate the following tables:
+EMPLOYEE(SSN,Name,DeptNo)
+ASSIGNED_TO(SSN, ProjectNo)
+PROJECT(ProjectNo,Area)
+Write queries to
+a. Obtain SSN of employees assigned to data base projects.
+b. Find the number of employees working in each department.
+c. Update the ProjectNo of Employee bearing SSN=1 to ProjectNo=20
+
+Solution:
+create table employee
+(ssn varchar2(10) primary key,
+ name char(20),
+ deptno varchar2(10));
+
+create table project
+(projectno varchar2(10) primary key,
+ area char(20));
+
+create table assigned_to
+(ssn varchar2(10) references employee(ssn),
+ projectno varchar2(10) references project(projectno));
+
+insert into employee values
+('1','Albus','01');
+
+insert into employee values
+('2','Severus','02');
+
+insert into employee values
+('3','Sirius','03');
+
+insert into project values
+('20','Database');
+
+insert into project values
+('21','Marketing');
+
+insert into project values
+('22','Development');
+
+insert into assigned_to values
+('1','20');
+
+insert into assigned_to values
+('1','21');
+
+insert into assigned_to values
+('2','20');
+
+insert into assigned_to values
+('2','22');
+
+insert into assigned_to values
+('3','21');
+
+insert into assigned_to values
+('3','22');
+
+
+
+a.	select employee.ssn,name from employee,assigned_to 
+	  where employee.ssn=assigned_to.ssn and assigned_to.projectno='20';
+
+b.	select depno,count(*)"No of Employees" from employee 
+	  group by depno;
+
+c.	update assigned_to
+	  set projectno='20' where ssn='1';
