@@ -1,0 +1,66 @@
+1.	Consider the relations 
+EMPLOYEE(SSN, Name, DeptNo), 
+ASSIGNED_TO(USN , ProjectNo) 
+PROJECT(ProjectNo, ProjectArea). 
+Create the above tables, insert suitable tuples and perform the following operations in SQL: 
+a.	Obtain the SSN of employees assigned to database projects.
+b.	Find the number of employees working in each department
+c.	Update the ProjectNo of Employee bearing SSN=1 to ProjectNo=20
+
+1.	Obtain ssn of employees for projectno 1 or 2
+2.	Obtain ssn of employees working on project 1 and 2
+3.	List the ssn name and the no of projects each employee is working on 
+4.	List the ssn of the employee working on max no of projects
+5.	Find the name of the employees  working on database projects 
+6.	List the projectno and projectarea of the project which has least no of employees
+7.	Find the ssn of the employees working on all the database projects 
+8.	List the ssn of the employees working only on database projects .
+9.	Find the dept no which has max no of employees
+10.	List the  SSN and names of employees who are not assigned to any project
+
+
+2.	Consider the relations 
+PART(PNO, PNAME, COLOUR), 
+SUPPLIER( SNO,SNAME,ADDRESS)
+SUPPLY(PNO,SNO,QUANTITY)
+ Create the above tables, insert suitable tuples and perform the following operations in SQL:
+a.	Obtain the PNO of parts supplied by supplier ‘Ram’.
+b.	Obtain the Names of suppliers who supply bolts
+c.	Delete the parts which are green in colour
+1.	Retrieve the suppliers who are from Bengaluru
+2.	Find the total no of parts supplied by each supplier.
+3. 	Find the parts which are supplied from Mumbai
+4. 	Retrieve the PNO of the parts not supplied by any suppliers.
+5.	Retrieve of the PNO of the part supplied by all suppliers.
+6.	Retrieve the Pname of the parts which are green and red in color.
+7.	Update the Address of the supplier bearing SNO=3 
+8.	Retrieve the Sno of the suppliers which supply only red coloured parts.
+9.	Retrieve the Sno of the supplier who has supplied max no of parts.	
+10.	Retrieve the Sno of the supplier who has supplied the max quantity of parts.
+
+3.	Consider the relations 
+BOAT(BID, BNAME, COLOUR), 
+SAILOR(SID, SNAME, AGE, RATING)
+RESERVES(BID,SID, DAY)
+ Create the above tables, insert suitable tuples and perform the following operations in SQL:
+a.	Obtain the bid of the boats reserved by ‘Ram’.
+b.	Retrieve the bid of the boats reserved by all the sailors.   
+c.	Find the number of boats reserved by each sailor
+1.	Retrieve the colors of the boats reserved for Monday.
+2.	Retrieve the number of boats reserved on each day.
+3.	Retrieve the most popular boat name
+4.	Retrieve the bid reserved by the sailor having the highest rating.
+5.	Retrieve the name of the youngest sailor.Retrieve the name of the sailors who have reserve the boats both for Sunday and Monday
+6.	Retrieve the names of the sailors who have reserved the boats only for               Sunday and not Monday.
+7.	Retrieve the names of the sailors who have reserved the boats only for Mondays.
+8.	Retrieve the name of the sailors who have reserved the largest number of boats.
+9.	Retrieve the name of the sailors who have reserved a red coloured boat and a green coloured boat
+
+4.	Consider the relations 
+PART(PNO, PNAME, COLOUR), 
+WAREHOUSE( WNO,WNAME,CITY)
+SHIPMENT(PNO,WNO,QUANTITY,DATE)
+ Create the above tables, insert suitable tuples and perform the following operations in SQL:
+a.	Obtain the Names of warehouses which have shipped red coloured parts.
+b.	Retrieve the PNO of  the parts shipped by all the warehouses.   
+c.	Find the number of parts supplied by each warehouse
