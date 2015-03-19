@@ -1,0 +1,61 @@
+Create the following tables and suitably populate them
+PART(PNO, PNAME, COLOUR),
+SUPPLIER(SNO,SNAME,ADDRESS),
+sUPPLY(PNO,SNO,QUANTITY)
+Perform the following operations on the above tables:
+a. Obtain PNO of parts supplied by supplier 'Ram'.
+b. Obtain names of suppliers who supply bolts.
+c. Delete the parts which are green in colour.
+
+Solution:
+
+create table part
+(pno varchar2(5) primary key,
+pname varchar2(10),
+colour char(10));
+
+create table supplier
+(sno varchar2(5) primary key,
+sname varchar2(10),
+address varchar2(20));
+
+create table supply
+(pno varchar2(5) references part(pno) on delete cascade,
+sno varchar2(5) references supplier(sno),
+quantity number(5)); 
+
+insert into part values
+('&Pno','&Pname','&Colour');
+   1	 Nuts	    Brown
+   2     Bolts	    Black
+   3	 Washer	    White
+   4     PVC	    Green
+
+insert into supplier values
+('&Sno','&Sname','&Address');
+  31     Ram       Shivajinagar
+  32     Raja      Sanjaynagar
+  33	 Sundar	   Gandhinagar
+
+insert into supply values
+('&pno','&Sno','&Qty');
+   1	 31     50000
+   2     31     45000
+   3	 32     80000
+   2	 32     43000
+   1	 33     87000
+   3	 33     12000
+   4     32     11000
+
+a.
+ select part.pno,pname from part,supplier,supply
+ where part.pno=supply.pno
+ and supply.sno=supplier.sno and supplier.sname='Ram';
+
+b. 
+ select sname from part,supplier,supply
+ where part.pno=supply.pno and part.pname='Bolts'
+ and supply.sno=supplier.sno;
+
+c. 
+ delete from part where colour='Green';
