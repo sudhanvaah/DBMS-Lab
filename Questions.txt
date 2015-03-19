@@ -64,3 +64,12 @@ SHIPMENT(PNO,WNO,QUANTITY,DATE)
 a.	Obtain the Names of warehouses which have shipped red coloured parts.
 b.	Retrieve the PNO of  the parts shipped by all the warehouses.   
 c.	Find the number of parts supplied by each warehouse
+
+5.	Consider the relations 
+BOOK(ISBN, TITLE,AUTHOR,PUBLISHER)
+STUDENT(USN, NAME, SEM, DEPTNO), 
+BORROW(ISBN, USN, DATE)
+ Create the above tables, insert suitable tuples and perform the following operations in SQL:
+a.	Obtain the name of the student who has borrowed the book bearing ISBN ‘123’ 
+b.	Obtain the Names of students who have borrowed database books.
+c.	  Find the number of books borrowed by each student.
