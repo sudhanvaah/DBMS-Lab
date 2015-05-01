@@ -1,0 +1,39 @@
+9a) Write a PL/SQL program to print the first 8 fibonacci numbers
+ b)  Write a PL/SQL program to display the day of the week taking system 
+      date as the input
+
+9)a)
+declare
+a number;
+b number;
+c number;
+n number;
+i number;
+begin
+n:=8;
+a:=0;
+b:=1;
+dbms_output.put_line(a);
+dbms_output.put_line(b);
+for i in 1..n-2
+loop
+c:=a+b;
+dbms_output.put_line(c);
+a:=b;
+b:=c;
+end loop;
+end;
+/
+
+9)b)
+declare
+t_date date;
+current_day varchar2(9);
+begin
+t_date:=sysdate;
+current_day:=to_char(t_date,'day');
+current_day:=initcap(current_day);
+current_day:=rtrim(current_day);
+dbms_output.put_line('Today is:'||current_day);
+end;
+/
