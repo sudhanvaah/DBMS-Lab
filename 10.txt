@@ -1,0 +1,44 @@
+10a)
+
+CREATE OR REPLACE PROCEDURE F4(N IN NUMBER,F OUT NUMBER)
+
+AS
+
+I NUMBER;
+
+BEGIN 
+
+F:=1;
+
+IF (N=0) THEN
+
+F:=1;
+
+END IF;
+
+FOR I IN 1..N
+
+LOOP
+
+F:=F*I;
+
+END LOOP;
+
+END;
+
+/
+
+
+DECLARE 
+
+N NUMBER:='&N';
+
+F NUMBER;
+
+BEGIN 
+
+F4(N,F);
+
+DBMS_OUTPUT.PUT_LINE('ANS IS '||F);
+
+END;
