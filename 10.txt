@@ -1,44 +1,47 @@
 10a)
 
 CREATE OR REPLACE PROCEDURE F4(N IN NUMBER,F OUT NUMBER)
-
 AS
-
 I NUMBER;
-
 BEGIN 
-
 F:=1;
-
 IF (N=0) THEN
-
 F:=1;
-
 END IF;
-
 FOR I IN 1..N
-
 LOOP
-
 F:=F*I;
-
 END LOOP;
-
 END;
-
 /
 
-
-DECLARE 
-
+DECLARE
 N NUMBER:='&N';
-
 F NUMBER;
-
 BEGIN 
-
 F4(N,F);
-
 DBMS_OUTPUT.PUT_LINE('ANS IS '||F);
-
 END;
+
+10b)
+
+set serveroutput on
+declare
+cursor cur is select *from employee1;
+rows employee1%rowtype;
+t int;
+begin
+open cur;
+t:= & t1;
+loop 
+fetch cur into rows;
+exit when cur%notfound;
+if rows.deptno=t
+then
+dbms_output.put_line('the ssn and names are '|| rows.ssn ||','||rows.name);
+end if;
+end loop;
+close cur;
+end;
+/
+
